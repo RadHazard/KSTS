@@ -34,6 +34,12 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="$(KSPDIR)\KSP_Data\Managed\Assembly*.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="$(KSPDIR)\KSP_Data\Managed\UnityEngine*.dll">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="$(KSPDIR)\KSP_x64_Data\Managed\Assembly*.dll">
       <Private>False</Private>
     </Reference>
@@ -101,7 +107,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
+  <!--<PropertyGroup>
     <PostBuildEvent>
 set KSPDIR=$(KSPDIR)
 
@@ -128,7 +134,7 @@ if $(ConfigurationName) == Release (
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>"$(DevEnvDir)\texttransform.exe" "$(ProjectDir)AssemblyVersion.tt"</PreBuildEvent>
-  </PropertyGroup>
+  </PropertyGroup>-->
   <!--<PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetPath)" "D:\KSP\KSTS\GameData\KSTS\$(TargetFileName)" &amp;&amp; copy /Y "$(TargetPath)" "D:\KSP\KSP\GameData\KSTS\$(TargetFileName)" &amp;&amp; copy /Y "D:\KSP\KSTS\GameData\KSTS\*" "D:\KSP\KSP\GameData\KSTS\"</PostBuildEvent>
   </PropertyGroup>-->
